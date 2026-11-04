@@ -21,7 +21,7 @@ public class ValidateDataController extends IliController {
 	@Override
 	protected String getExecutablePath() {
 		
-		File file = new File("programs/ilivalidator-" + ilivalidatorVersion + 
+		File file = new File(ai.ilisuite.application.data.Config.getAppDir(), "programs/ilivalidator-" + ilivalidatorVersion + 
 				"-bindist/ilivalidator-" + ilivalidatorVersion + ".jar");
 		return "java -jar  \"" + file.getAbsolutePath() + "\"";
 	}

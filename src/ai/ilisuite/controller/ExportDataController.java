@@ -79,7 +79,7 @@ public class ExportDataController extends IliController implements DbSelectorCon
 		String AppNameAndVersion = dbDesc.getAppName() + "-" + dbDesc.getAppVersion(); 
 		String javaExec = "java -jar";
 		
-		File file = new File(basePath + AppNameAndVersion + ".jar");
+		File file = new File(ai.ilisuite.application.data.Config.getAppDir(), basePath + AppNameAndVersion + ".jar");
 		
 		return javaExec + " \"" + file.getAbsolutePath() + "\"";
 	}

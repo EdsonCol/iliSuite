@@ -58,11 +58,11 @@ public class Main extends Application {
 	
 	public void CreateDirectoryStructureAndFiles(Config config) throws Exception {
 		
-		File dirLogAppIliSuite = new File(config.getLogAppDir());
+		File dirLogAppIliSuite = new File(Config.getAppDir(), config.getLogAppDir());
 		File dirIliSuite = new File(config.getIliSuiteDir());
 		File dirLog = new File(config.getLogDir());
 		File configFile = new File(config.getConfigPath());
-		File defaultConfigFile = new File(defaultConfigFileName);
+		File defaultConfigFile = new File(Config.getAppDir(), defaultConfigFileName);
 		
 		if(!dirLogAppIliSuite.exists())
 			dirLogAppIliSuite.mkdirs();

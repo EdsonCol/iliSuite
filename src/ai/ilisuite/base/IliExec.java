@@ -52,7 +52,7 @@ public class IliExec {
 	public void exec(String[] params) {
 		try {
 			
-			proc = Runtime.getRuntime().exec(app + " " +  String.join(" ",params));
+			proc = Runtime.getRuntime().exec(app + " " +  String.join(" ",params), null, ai.ilisuite.application.data.Config.getAppDir());
 			
             ExecutableStream errorStream = new 
                     ExecutableStream(proc.getErrorStream(), true);            

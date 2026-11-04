@@ -31,6 +31,18 @@ public class Config {
 		logEnabled = false;
 	}
 
+	static public File getAppDir() {
+		try {
+			File codeSource = new File(Config.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+			File dir = codeSource.isFile() ? codeSource.getParentFile() : codeSource;
+			if (dir != null && new File(dir, "programs").exists()) {
+				return dir;
+			}
+		} catch (Exception e) {
+		}
+		return new File(System.getProperty("user.dir"));
+	}
+
 	static public Config getInstance() {
 		if (instance == null)
 			instance = new Config();

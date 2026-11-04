@@ -15,7 +15,8 @@ public class UmlEditor {
 	}
 	public void run() {
 		try {
-			Runtime.getRuntime().exec("java -jar ./programs/umleditor-" + umlEditorVersion + "/umleditor-" + umlEditorVersion + ".jar");
+			java.io.File jarFile = new java.io.File(ai.ilisuite.application.data.Config.getAppDir(), "programs/umleditor-" + umlEditorVersion + "/umleditor-" + umlEditorVersion + ".jar");
+			Runtime.getRuntime().exec("java -jar \"" + jarFile.getAbsolutePath() + "\"", null, ai.ilisuite.application.data.Config.getAppDir());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

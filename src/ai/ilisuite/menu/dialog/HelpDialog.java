@@ -44,7 +44,7 @@ public class HelpDialog extends Dialog<Boolean> implements Initializable {
 		this.getDialogPane().getButtonTypes().setAll(ButtonType.CLOSE);
 		engine = wv_page.getEngine();
 		
-		File file = new File("./help/html/index.html");
+		File file = new File(ai.ilisuite.application.data.Config.getAppDir(), "help/html/index.html");
 		URL url;
 		try {
 			url = file.toURI().toURL();
@@ -66,7 +66,7 @@ public class HelpDialog extends Dialog<Boolean> implements Initializable {
 	
 	@FXML
 	public void onClickBtnHome(ActionEvent event) throws IOException {
-		File file = new File("./help/html/index.html");
+		File file = new File(ai.ilisuite.application.data.Config.getAppDir(), "help/html/index.html");
 		URL url;
 		try {
 			url = file.toURI().toURL();
